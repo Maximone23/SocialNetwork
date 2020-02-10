@@ -13,14 +13,17 @@ import { Route, BrowserRouter } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='app-wrapper'>
+      <div className="app-wrapper">
         <Header />
         <Navbar />
-        <Route path='/profile' component={Profile} />
-        <Route path='/dialogs' component={Dialogs} />
-        <Route path='/news' component={News} />
-        <Route path='/music' component={Music} />
-        <Route path='/settings' component={Settings} />
+        <div className="app-wrapper-content">
+          <Route path='/profile' component={Profile} />
+          <Route path='/dialogs' component={Dialogs} />
+          <Route path='/news' component={News} />
+          <Route path='/music' component={Music} />
+          <Route path='/settings' component={Settings} />
+        </div>
+        
       </div>
     </BrowserRouter>
     

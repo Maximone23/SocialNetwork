@@ -1,3 +1,16 @@
-.content {
-  text-align: center;
+.dialogs {
+display: grid;
+grid-template-columns: 4fr 8fr;
+}
+.dialogsItems .dialog {
+padding: 10px;
+}
+.dialogsItems .active {
+  color: gold;
+  }
+.messages {
+padding: 10px;
+}
+.messages .message {
+
 }
