@@ -1,0 +1,13 @@
+.nav {
+  grid-area: nav;
+  background-color: #171816;
+  border: solid 5px #aeaeae;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+}
+.item {
+  color: #fff;
+  font-size: 26px;
+  padding: 20px;
+}
