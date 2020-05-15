@@ -2,9 +2,11 @@
   grid-area: nav;
   background-color: #171816;
   border: solid 5px #aeaeae;
+  border-top: none;
   text-align: center;
   color: #fff;
   font-size: 26px;
+  height: 100vh;
 }
 .item {
   color: #fff;
