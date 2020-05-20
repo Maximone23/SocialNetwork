@@ -9,6 +9,7 @@
 
 .app-wrapper-content {
   grid-area: content;
+  background-color: rgba(108, 127, 229, 0.85);
   
 }
 .app-wrapper-content img {
