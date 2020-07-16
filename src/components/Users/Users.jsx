@@ -37,7 +37,6 @@ const Users = (props) => {
             <div>
                 {u.followed
                     ? <button onClick={() => {
-
                         axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                             withCredentials: true,
                             headers: {
@@ -46,11 +45,9 @@ const Users = (props) => {
                         })
                             .then(response => {
                                 if (response.data.resultCode == 0) {
-                                    props.unfollow(u.id);
+                                    props.follow(u.id);
                                 }
                             });
-
-
                     }}>Unfollow</button>
                     : <button onClick={() => {
 
@@ -68,22 +65,22 @@ const Users = (props) => {
 
 
                     }}>Follow</button>}
-                        </div>
-                        </span>
-                        <span>
-                        <span>
-                        <div>{u.name}</div>
-                        <div>{u.status}</div>
-                        </span>
-                        <span>
-                        <div>{'u.location.country'}</div>
-                        <div>{'u.location.city'}</div>
-                        </span>
-                        </span>
-                        </div>)
-                        }
+            </div>
+        </span>
+                <span>
+            <span>
+                <div>{u.name}</div>
+                <div>{u.status}</div>
+            </span>
+            <span>
+                <div>{'u.location.country'}</div>
+                <div>{'u.location.city'}</div>
+            </span>
+        </span>
+            </div>)
+        }
 
-                        </div>
-                        }
+    </div>
+}
 
-                        export default Users;
+export default Users;
