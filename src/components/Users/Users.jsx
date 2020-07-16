@@ -37,36 +37,53 @@ const Users = (props) => {
             <div>
                 {u.followed
                     ? <button onClick={() => {
-                        props.unfollow(u.id)
+
+                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                            withCredentials: true,
+                            headers: {
+                                'API-KEY': 'f1c82423-cd00-4395-b54c-61550699ae40'
+                            }
+                        })
+                            .then(response => {
+                                if (response.data.resultCode == 0) {
+                                    props.unfollow(u.id);
+                                }
+                            });
+
+
                     }}>Unfollow</button>
                     : <button onClick={() => {
 
-                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                            withCredentials: true
+                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                            withCredentials: true,
+                            headers: {
+                                'API-KEY': 'f1c82423-cd00-4395-b54c-61550699ae40'
+                            }
                         })
                             .then(response => {
-                                this.props.toggleIsFetching(false);
-                                this.props.setUsers(response.data.items);
+                                if (response.data.resultCode == 0) {
+                                    props.follow(u.id);
+                                }
                             });
 
-                        props.follow(u.id)
+
                     }}>Follow</button>}
-            </div>
-        </span>
-                <span>
-            <span>
-                <div>{u.name}</div>
-                <div>{u.status}</div>
-            </span>
-            <span>
-                <div>{'u.location.country'}</div>
-                <div>{'u.location.city'}</div>
-            </span>
-        </span>
-            </div>)
-        }
+                        </div>
+                        </span>
+                        <span>
+                        <span>
+                        <div>{u.name}</div>
+                        <div>{u.status}</div>
+                        </span>
+                        <span>
+                        <div>{'u.location.country'}</div>
+                        <div>{'u.location.city'}</div>
+                        </span>
+                        </span>
+                        </div>)
+                        }
 
-    </div>
-}
+                        </div>
+                        }
 
-export default Users;
+                        export default Users;
