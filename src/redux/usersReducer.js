@@ -94,7 +94,6 @@ export const follow = (userId)=> {
                 if (response.data.resultCode == 0) {
                     dispatch(followSuccess(userId));
                 }
-
                 dispatch(toggleFollowingInProgress(false, userId));
             });
     }

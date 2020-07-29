@@ -16,7 +16,6 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
-
     }
 
 
@@ -55,4 +54,5 @@ let mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps, { getUsers, toggleFollowingInProgress, setCurrentPage, unfollow, follow})(UsersContainer);
+export default connect(mapStateToProps, { getUsers, toggleFollowingInProgress, setCurrentPage,
+    unfollow, follow})(UsersContainer);
